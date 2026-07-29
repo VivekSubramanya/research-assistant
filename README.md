@@ -83,6 +83,141 @@ Required paths used by runtime:
 
 If these files are missing, local LLM calls will fail and the app will degrade to context-only fallback behavior.
 
+## Build the Project GGUF (End-to-End)
+
+This section documents the exact pipeline used by this project to produce the runtime model file:
+
+- Base model: `Qwen/Qwen2.5-14B-Instruct`
+- Fine-tuning method: QLoRA (LLaMA-Factory)
+- Training data source: `training/generate_training_data.py`
+- Final runtime artifact:
+  - `models/qwen2.5-14b-research-assistant.Q4_K_M.gguf`
+
+### 1) Generate training datasets for this project
+
+The generator writes LLaMA-Factory-compatible datasets and `dataset_info.json`.
+
+```powershell
+# From repo root
+.\venv\Scripts\Activate.ps1
+
+# Optional: choose the local Ollama model used to synthesize examples
+$env:OLLAMA_MODEL = "qwen2.5:14b"
+
+python .\training\generate_training_data.py `
+  --output-dir .\training\data `
+  --arxiv-count 1000 `
+  --rag-count 1000 `
+  --intent-count 500
+```
+
+Expected outputs:
+- `training/data/arxiv_params.json`
+- `training/data/rag_responses.json`
+- `training/data/intent_classification.json`
+- `training/data/dataset_info.json`
+
+### 2) Prepare LLaMA-Factory workspace
+
+This repo stores training configs under `training/llamafactory/`, while LLaMA-Factory runs in its own repo.
+
+```powershell
+# Example path; adjust if your LLaMA-Factory is elsewhere
+cd C:\path\to\LLaMA-Factory
+
+pip install -e ".[torch,metrics]"
+```
+
+Copy this project's generated data into LLaMA-Factory `data/`:
+
+```powershell
+Copy-Item -Path "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\training\data\*" -Destination ".\data\" -Recurse -Force
+```
+
+Copy this project's training YAML files into your LLaMA-Factory root (or reference them by absolute path):
+
+```powershell
+Copy-Item -Path "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\training\llamafactory\train_qwen2.5_14b_lora.yaml" -Destination ".\"
+Copy-Item -Path "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\training\llamafactory\export_gguf.yaml" -Destination ".\"
+```
+
+### 3) Train the adapter (QLoRA)
+
+This uses the exact config in `training/llamafactory/train_qwen2.5_14b_lora.yaml`:
+- `model_name_or_path: Qwen/Qwen2.5-14B-Instruct`
+- datasets: `arxiv_params,rag_responses,intent_classification`
+- output adapter dir: `./saves/qwen2.5-14b-lora-research-assistant`
+
+```powershell
+cd C:\path\to\LLaMA-Factory
+llamafactory-cli train .\train_qwen2.5_14b_lora.yaml
+```
+
+### 4) Export merged model (HF format)
+
+This uses the exact config in `training/llamafactory/export_gguf.yaml`.
+
+```powershell
+cd C:\path\to\LLaMA-Factory
+llamafactory-cli export .\export_gguf.yaml
+```
+
+Expected merged model output:
+- `C:\path\to\LLaMA-Factory\models\qwen2.5-14b-research-assistant-merged`
+
+### 5) Convert merged HF model to F16 GGUF
+
+Use `llama.cpp` converter:
+
+```powershell
+cd C:\path\to\llama.cpp
+python .\convert_hf_to_gguf.py `
+  "C:\path\to\LLaMA-Factory\models\qwen2.5-14b-research-assistant-merged" `
+  --outfile "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\models\qwen2.5-14b-research-assistant.f16.gguf" `
+  --outtype F16
+```
+
+### 6) Quantize to Q4_K_M GGUF used by this app
+
+Option A (project script, current repo path assumptions):
+
+```powershell
+cd C:\Users\pc\OneDrive\Desktop\ResearchAssistant
+python .\quantize_gguf.py
+```
+
+Option B (llama.cpp quantizer):
+
+```powershell
+cd C:\path\to\llama.cpp
+.\build\bin\Release\llama-quantize.exe `
+  "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\models\qwen2.5-14b-research-assistant.f16.gguf" `
+  "C:\Users\pc\OneDrive\Desktop\ResearchAssistant\models\qwen2.5-14b-research-assistant.Q4_K_M.gguf" `
+  Q4_K_M
+```
+
+### 7) Point runtime to the produced GGUF
+
+Runtime default path in `llm.py` already expects:
+- `models/qwen2.5-14b-research-assistant.Q4_K_M.gguf`
+
+Also ensure the CLI binary exists:
+- `llama-cpp precompiled/llama-cli.exe`
+
+Then run:
+
+```powershell
+streamlit run ResearchAssistant.py
+```
+
+### 8) Quick verification after GGUF build
+
+In the app, run these prompts:
+- `Tell me about paper 2406.15531`
+- `What are the top 5 papers for computer science?`
+
+And verify logs include successful `stage=llm_call output={'status': 'ok' ...}` entries.
+
 ## Run the app
 
 ```powershell
