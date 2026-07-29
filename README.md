@@ -93,6 +93,23 @@ This section documents the exact pipeline used by this project to produce the ru
 - Final runtime artifact:
   - `models/qwen2.5-14b-research-assistant.Q4_K_M.gguf`
 
+### Time and hardware estimates
+
+These are practical ranges, not hard guarantees. Actual duration varies with GPU tier, CPU speed, storage, internet bandwidth, and dataset size.
+
+| Stage | Typical time | Main hardware pressure | Notes |
+|---|---:|---|---|
+| Generate training data (`training/generate_training_data.py`) | 30 to 180 min | CPU + Ollama model runtime | Depends heavily on `--arxiv-count`, `--rag-count`, and `--intent-count`. |
+| QLoRA training (`llamafactory-cli train`) | 4 to 16 hours | GPU VRAM + compute | For Qwen2.5-14B with 4-bit QLoRA, plan for roughly 12 to 16 GB VRAM minimum. |
+| Export merged HF model (`llamafactory-cli export`) | 20 to 90 min | CPU RAM + disk I/O | Writes large model files; SSD strongly recommended. |
+| Convert HF -> F16 GGUF (`convert_hf_to_gguf.py`) | 20 to 60 min | CPU + RAM + disk I/O | Slower on HDD or memory-constrained machines. |
+| Quantize F16 -> Q4_K_M | 15 to 45 min | CPU + RAM | `Q4_K_M` reduces size and improves inference throughput. |
+
+Approximate storage planning:
+- Temporary working space during merge/convert can exceed 100 GB.
+- Keep at least 150 GB free to avoid mid-pipeline failures.
+- Final Q4_K_M artifact is much smaller than the merged F16 model but still multi-GB.
+
 ### 1) Generate training datasets for this project
 
 The generator writes LLaMA-Factory-compatible datasets and `dataset_info.json`.
