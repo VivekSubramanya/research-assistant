@@ -1,0 +1,17 @@
+[
+  {
+    "instruction": "Classify the user intent into one of: default, comparison, citation_request, paper_level_query.",
+    "input": "I need information about the recent developments discussed in arXiv 2310.06825 regarding supersymmetry theories.",
+    "output": "paper_level_query"
+  },
+  {
+    "instruction": "Classify the user intent into one of: default, comparison, citation_request, paper_level_query.",
+    "input": "What are the main differences between BERT and GPT models in natural language processing tasks?",
+    "output": "comparison"
+  },
+  {
+    "instruction": "Classify the user intent into one of: default, comparison, citation_request, paper_level_query.",
+    "input": "How does the superstring theory differ from loop quantum gravity in explaining the quantum behavior of black holes?",
+    "output": "comparison"
+  }
+]

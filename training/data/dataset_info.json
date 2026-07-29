@@ -1,0 +1,34 @@
+{
+  "arxiv_params": {
+    "file_name": "arxiv_params.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+"rag_responses": {
+  "file_name": "rag_responses.json",
+  "formatting": "sharegpt",
+  "columns": {
+    "messages": "messages"
+  },
+  "tags": {
+    "role_tag": "role",
+    "content_tag": "content",
+    "user_tag": "user",
+    "assistant_tag": "assistant",
+    "system_tag": "system"
+  }
+},
+  "intent_classification": {
+    "file_name": "intent_classification.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

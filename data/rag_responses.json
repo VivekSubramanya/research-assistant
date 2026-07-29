@@ -1,0 +1,18 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a research assistant restricted to the provided arXiv context only.\n\nRules:\n- Use only facts present in Context.\n- If Context is insufficient, state that clearly.\n- Never invent citations.\n- Return JSON only.\n\nFrontend response JSON schema:\n{\n    \"query\": \"<original user query>\",\n    \"intent\": \"default|comparison|citation_request|paper_level_query\",\n    \"messages\": [\n        {\"type\": \"text\", \"content\": \"...\", \"title\": \"optional\"},\n        {\"type\": \"table\", \"content\": [{\"column\": \"value\"}]},\n        {\"type\": \"citations\", \"content\": [\"citation string\"]}\n    ],\n    \"sources\": [\"optional source ids\"],\n    \"meta\": {}\n}\n\nAllowed message types: text, table, graph, list, citations, code.\n\nAnswer concisely and include a citations message with only citations found in the provided context. The citation should include the title, authors, and arXiv ID if available."
+      },
+      {
+        "role": "user",
+        "content": "Context (arXiv-only):\n[Chunk 1] (arXiv:2305.6789): 'This study presents a novel deep learning model for predicting protein-protein interactions, which has been shown to outperform existing methods in accuracy and efficiency.' [Chunk 2] (arXiv:2304.5678): 'We review recent advances in computational biology with an emphasis on machine learning techniques applied to the study of protein interaction networks, including deep learning approaches for prediction tasks.'\n\nQuery: Can you find me a recent paper discussing the application of deep learning in predicting protein-protein interactions?\n\nImportant: Only use facts that appear in the Context above."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"query\": \"Can you find me a recent paper discussing the application of deep learning in predicting protein-protein interactions?\", \"intent\": \"paper_level_query\", \"messages\": [{\"type\": \"text\", \"content\": \"The study presented in arXiv:2305.6789 discusses a novel deep learning model for predicting protein-protein interactions.\", \"title\": \"Deep Learning Model for Protein-Protein Interactions\"}], \"sources\": [\"arXiv:2305.6789\"], \"meta\": {}}"
+      }
+    ]
+  }
+]

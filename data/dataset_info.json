@@ -1,0 +1,27 @@
+{
+  "arxiv_params": {
+    "file_name": "arxiv_params.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "rag_responses": {
+    "file_name": "rag_responses.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    }
+  },
+  "intent_classification": {
+    "file_name": "intent_classification.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

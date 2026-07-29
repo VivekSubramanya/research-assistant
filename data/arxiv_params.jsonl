@@ -1,0 +1,1 @@
+{"instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.", "input": "Domain: Astrophysics", "output": "{\"search_query\": \"cat:astro-ph\", \"start\": 0, \"max_results\": 10}"}

@@ -1,0 +1,66 @@
+### LLaMA-Factory QLoRA training config for Qwen2.5-14B-Instruct
+### Fine-tunes the model on three datasets:
+###   - arxiv_params (Alpaca format)
+###   - rag_responses (ShareGPT chat format)
+###   - intent_classification (Alpaca format)
+###
+### Usage:
+###   cd <path-to-LLaMA-Factory>
+###   llamafactory-cli train path/to/this/file.yaml
+
+### model
+model_name_or_path: Qwen/Qwen2.5-14B-Instruct
+# If you have a local download, use the absolute path instead:
+# model_name_or_path: C:/models/Qwen2.5-14B-Instruct
+quantization_bit: 4
+quantization_method: bnb
+double_quantization: false
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 32
+lora_alpha: 64
+lora_dropout: 0.05
+use_rslora: false
+
+### dataset
+dataset: arxiv_params,rag_responses,intent_classification
+template: qwen
+cutoff_len: 4096
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 4
+
+### output
+output_dir: ./saves/qwen2.5-14b-lora-research-assistant
+logging_steps: 10
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+learning_rate: 2.0e-4
+num_train_epochs: 2.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+bf16: true
+fp16: false
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+ddp_timeout: 180000000
+
+### eval
+val_size: 0.05
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 100
+load_best_model_at_end: true
+
+### flash attention (optional, requires proper CUDA setup)
+# flash_attn: fa2

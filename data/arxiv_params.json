@@ -1,0 +1,17 @@
+[
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Domain: Quantum Chemistry. Generate a query referencing one or more specific arXiv paper IDs.",
+    "output": "{\"id_list\": \"2301.09876,2305.14790\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Domain: Computer Vision. Generate a query referencing one or more specific arXiv paper IDs.",
+    "output": "{\"id_list\": \"2303.08774,2305.18290\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Domain: NLP. Generate a natural language search query. Optionally include recency filters, acronyms, or comparison conjunctions.",
+    "output": "{\"search_query\": \"cat:cs.CL+OR+cat:stat.ML\", \"start\": 0, \"max_results\": 5}"
+  }
+]

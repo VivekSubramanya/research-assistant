@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# VS Code / local tooling
+.vs/
+.vscode/
+.agents/
+
+# Runtime artifacts
+logs.txt
+debug_entrypoints.log
+tmp-llama-output.txt
+
+# Local databases and indices
+research.db
+faiss_index.bin
+
+# Local papers and generated data
+papers/
+training/data copy/
+
+# Model and binary artifacts
+models/
+*.gguf
+*.bin
+*.safetensors
+
+# Large vendor / nested repos (kept out of root repo)
+LLaMA-Factory/
+llama.cpp/
+llama-cpp precompiled/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db

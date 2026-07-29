@@ -1,0 +1,14 @@
+FROM ./qwen2.5-14b-research-assistant.Q4_K_M.gguf
+
+TEMPLATE """{{- if .System }}
+<|im_start|>system
+{{ .System }}<|im_end|>
+{{- end }}
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+{{ .Response }}<|im_end|>
+"""
+
+PARAMETER stop <|im_start|>
+PARAMETER stop <|im_end|>

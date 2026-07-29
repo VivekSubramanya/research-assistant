@@ -1,0 +1,1502 @@
+[
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection in computer vision",
+    "output": "{\"search_query\": \"cat:cs.CV AND ti:*object detection*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND all:quantitative biology AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat$q-bio: submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv paper 2305.12345 and arXiv paper 2306.09876?",
+    "output": "{\"id_list\": \"2305.12345,2306.09876\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:physics.chem-ph AND cat:nlin.CD AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Provide me with the latest updates and summaries for arXiv papers 2305.14278, 2306.05601, and 2307.10892.",
+    "output": "{\"id_list\": \"2305.14278,2306.05601,2307.10892\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular systems",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular physics AND ti:quantum chemistry OF molecular systems\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection techniques in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex AND all:dark matter AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gravitational waves detection techniques",
+    "output": "{\"search_query\": \"cat:eess.IV AND ti:gravitational+waves+detection\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in deep learning techniques",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection techniques",
+    "output": "{\"search_query\": \"all:\\\"dark matter detection techniques\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning for medical image segmentation published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates and discussions related to arXiv paper 2305.14278 and 2306.00001 in astrophysics?",
+    "output": "{\"id_list\": \"2305.14278,2306.00001\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on number theory from the last year",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of organic molecules",
+    "output": "{\"search_query\": \"(cat:quantum化学 AND ti:有机分子) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in papers 2305.12345 and 2306.07890?",
+    "output": "{\"id_list\": \"2305.12345,2306.07890\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection techniques in high energy physics",
+    "output": "{\"search_query\": \"(cat:hep-ex AND all:dark matter detection techniques) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum entanglement in molecular systems since 2023",
+    "output": "{\"search_query\": \"cat:quantum'&&cat:molecular)&&(submittedDate:[202301010000+TO+202607220000])\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers in astrophysics",
+    "output": "{\"search_query\": \"cat:astro-ph.GA AND cat:gr-qc AND all:\\\"black hole merger\\\"\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular simulations from the last year",
+    "output": "{\"search_query\": \"cat:quantum AND cat:molecular-simulation AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in papers 2305.14623 and 2306.07891?",
+    "output": "{\"id_list\": \"2305.14623,2306.07891\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent advancements discussed in arXiv paper 2305.14223 and arXiv paper 2306.15567?",
+    "output": "{\"id_list\": \"2305.14223,2306.15567\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on RNA editing mechanisms in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"RNA editing\\\" AND all:\\\"quantitative biology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_dynamics_simulations AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advances in natural language processing and generation",
+    "output": "{\"search_query\": \"(all:\\\"natural language processing\\\" OR all:\\\"NLP\\\" OR all:\\\"language generation\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in algebraic topology",
+    "output": "{\"search_query\": \"all:\\\"algebraic topology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08732?",
+    "output": "{\"id_list\": \"2305.14567,2306.08732\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on algebraic topology",
+    "output": "{\"search_query\": \"all:\\\"algebraic topology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"(cat:quantum-chemistry AND ti:molecular+dynamic+simulation) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"(cat:hep-ex AND all:dark matter detection) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers in astrophysics",
+    "output": "{\"search_query\": \"(cat:astro-ph.EP AND all:\\\"black hole merger\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published since 2023",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle interactions",
+    "output": "{\"search_query\": \"cat:hep-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection techniques in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:computer vision AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular dynamics since 2023",
+    "output": "{\"search_query\": \"cat:quantum'&&''cat:molecular'&&''submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in papers 2305.12345 and 2211.00001?",
+    "output": "{\"id_list\": \"2305.12345,2211.00001\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08732?",
+    "output": "{\"id_list\": \"2305.14567,2306.08732\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning algorithm\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in quantum chemistry methods for molecular dynamics simulations",
+    "output": "{\"search_query\": \"all:\\\"quantum chemistry\\\" AND all:\\\"molecular dynamics simulations\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:\\\"robotics\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1905.03947 and 2002.06789 in High Energy Physics?",
+    "output": "{\"id_list\": \"1905.03947,2002.06789\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates and discussions related to arXiv paper 2305.14273 and 2306.08934 in the field of Quantitative Biology?",
+    "output": "{\"id_list\": \"2305.14273,2306.08934\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advances in natural language processing and generation",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND all:\\\"generation\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology from the last year",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1802.04956 and 2305.14321?",
+    "output": "{\"id_list\": \"1802.04956,2305.14321\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08732?",
+    "output": "{\"id_list\": \"2305.14567,2306.08732\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning algorithms published in the last year",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on number theory from the last year",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in natural language processing",
+    "output": "{\"search_query\": \"cat:cs.LG AND cat:cs.CL AND ti:*transformer* AND ti:*natural language processing* AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14278 and 2306.03999 in Quantitative Biology?",
+    "output": "{\"id_list\": \"2305.14278,2306.03999\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on knot theory published since 2023",
+    "output": "{\"search_query\": \"cat:knot-theory AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on deep learning for time series prediction",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"time series prediction\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in number theory",
+    "output": "{\"search_query\": \"all:\\\"number theory\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle interactions",
+    "output": "{\"search_query\": \"cat:hep-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics related to particle collisions",
+    "output": "{\"search_query\": \"cat:hep-ex AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning for autonomous vehicles",
+    "output": "{\"search_query\": \"(all:\\\"reinforcement learning\\\" AND all:\\\"autonomous vehicles\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning for medical image segmentation published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202607220000+TO+202707220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum mechanics applied to molecular dynamics since 2023",
+    "output": "{\"search_query\": \"cat:quantum.mechanics AND cat:molecular.dynamics AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on RNA sequencing techniques in quantitative biology",
+    "output": "{\"search_query\": \"(all:\\\"RNA sequencing\\\" AND all:quantitative biology) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning algorithms published in the last year",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning methods for autonomous vehicles published in the last year",
+    "output": "{\"search_query\": \"cat:cs.LG AND cat:cs.RO AND ti:*reinforcement learning* AND au:*autonomous vehicle* AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on topological data analysis in the last year",
+    "output": "{\"search_query\": \"all:topological data analysis AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter detection methods since 2023",
+    "output": "{\"search_query\": \"all:\\\"dark matter detection\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"quantitative-bio:\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black holes",
+    "output": "{\"search_query\": \"all:\\\"black holes\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on RNA editing mechanisms in recent years",
+    "output": "{\"search_query\": \"all:\\\"RNA editing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter detection methods published in the last year",
+    "output": "{\"search_query\": \"cat:astro-ph.IM AND submittedDate:[202607220000+TO+202707220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black holes in astrophysics",
+    "output": "{\"search_query\": \"cat:astro-ph.EP AND all:\\\"black holes\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle interactions",
+    "output": "{\"search_query\": \"cat:hep-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing algorithms since 2023",
+    "output": "{\"search_query\": \"cat:quantum AND ti:algorithms AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques published since 2020",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND submittedDate:[202001010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Provide me with the latest updates and discussions from the arXiv papers ids 1802.04978, 2305.14632, and 2212.12345 in Mathematics.",
+    "output": "{\"id_list\": \"1802.04978,2305.14632,2212.12345\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND all:quantitative biology AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"(cat:quantum化学 AND cat:molecular_dynamics) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers",
+    "output": "{\"search_query\": \"cat:einstein-albert AND (ti:*black hole merger* OR abs:*black hole merger*) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics",
+    "output": "{\"search_query\": \"cat:quantum-chemistry AND cat:molecular-dynamics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates and discussions related to arXiv paper 2305.14278 and 2306.05273 in Mathematics?",
+    "output": "{\"id_list\": \"2305.14278,2306.05273\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in deep learning architectures",
+    "output": "{\"search_query\": \"all:\\\"deep learning architectures\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"cat:cs.CV AND ti:*object detection* AND ti:*deep learning*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates on the papers arXiv:2305.14567 and arXiv:2306.08971 in quantum chemistry?",
+    "output": "{\"id_list\": \"2305.14567,2306.08971\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection techniques in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:computer vision AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing models",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio.GN AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat[q-bio]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in natural language processing",
+    "output": "{\"search_query\": \"cat:cs.LG AND cat:cs.CL AND all:\\\"transformer architecture\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques published since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning applications in robotics published since 2023",
+    "output": "{\"search_query\": \"cat:cs.RO AND ti:*reinforcement learning* AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter detection methods published since 2023",
+    "output": "{\"search_query\": \"cat:astro-ph.IM AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates on the papers arXiv:2305.14223 and arXiv:2306.07845 in computer vision?",
+    "output": "{\"id_list\": \"2305.14223,2306.07845\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"(cat:chem.QM AND ti:\\\"quantum chemistry\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques published since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex AND all:dark matter AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle interactions",
+    "output": "{\"search_query\": \"cat:hep-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on transformer architectures in NLP published in the last year",
+    "output": "{\"search_query\": \"cat:nlin.CD AND (ti:*transformer* OR abs:*transformer*) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates and discussions on arXiv paper 1803.00569 and 2002.05502 in High Energy Physics?",
+    "output": "{\"id_list\": \"1803.00569,2002.05502\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on algebraic geometry",
+    "output": "{\"search_query\": \"cat:math.AG AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio.GN AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14638 and 2306.02244 in the field of Computer Vision?",
+    "output": "{\"id_list\": \"2305.14638,2306.02244\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning algorithm\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum chemistry and molecular dynamics since 2023",
+    "output": "{\"search_query\": \"cat:quant-ph AND (cat:physics.chem-ph OR cat:nlin.AO) AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates on the papers with IDs 1802.04976 and 2305.14632 in the Mathematics section?",
+    "output": "{\"id_list\": \"1802.04976,2305.14632\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers",
+    "output": "{\"search_query\": \"cat:eprints AND (ti:\\\"black hole merger\\\" OR abs:\\\"black hole merger\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum chemistry of molecular dynamics since 2023",
+    "output": "{\"search_query\": \"cat:quantum-chemistry AND cat:molecular-dynamics AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:robotics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND cat:robotics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide insights on the papers with IDs 1904.03857 and 2106.04344 in astrophysics?",
+    "output": "{\"id_list\": \"1904.03857,2106.04344\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in recent years",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND submittedDate:[202307220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published since 2021",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202101010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Provide me with the latest updates and discussions from the community regarding arXiv paper 2305.14223 and 2212.09999.",
+    "output": "{\"id_list\": \"2305.14223,2212.09999\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex OR cat:astro-ph.IM AND ti:*dark matter* AND ti:*detection*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on new developments in quantum chemistry since 2023",
+    "output": "{\"search_query\": \"cat:quantum-chem AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers in astrophysics",
+    "output": "{\"search_query\": \"(cat:astro-ph.EP AND all:\\\"black hole merger\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on RNA editing mechanisms in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"RNA editing\\\" AND all:quantitative biology AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advances in object detection techniques",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide insights on the papers arXiv:2305.14218 and arXiv:2306.07890 regarding advances in medical image segmentation using deep learning?",
+    "output": "{\"id_list\": \"2305.14218,2306.07890\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND all:quantitative biology AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in number theory",
+    "output": "{\"search_query\": \"all:\\\"number theory\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:\\\\computer.vision\\\\ AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the arXiv papers with IDs 1906.05423 and 2305.14432, particularly focusing on their contributions to natural language processing?",
+    "output": "{\"id_list\": \"1906.05423,2305.14432\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle collisions",
+    "output": "{\"search_query\": \"all:\\\"high energy physics particle collisions\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular simulations published in the last year",
+    "output": "{\"search_query\": \"cat:quantum AND cat:molecular-simulation AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning methods for robotics applications published in the last year",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:\\\"robotics\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1801.00924 and 2305.14632, particularly focusing on their methodologies and findings?",
+    "output": "{\"id_list\": \"1801.00924,2305.14632\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published in the last year",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202310170000+TO+202410170000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter detection methods since 2023",
+    "output": "{\"search_query\": \"all:\\\"dark matter detection\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:\\\"cs.CV\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the abstracts and summaries of arXiv papers with IDs 2305.14633 and 2306.05601?",
+    "output": "{\"id_list\": \"2305.14633,2306.05601\", \"start\": 0, \"max_results\": 2}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in NLP",
+    "output": "{\"search_query\": \"(all:\\\"transformer architectures\\\" AND cat:nlin) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"cat:q-bio.GN AND all:gene editing AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in generative adversarial networks",
+    "output": "{\"search_query\": \"all:\\\"generative adversarial networks\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published in the last year",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning and its applications in robotics",
+    "output": "{\"search_query\": \"(all:\\\"reinforcement learning\\\" AND all:\\\"robotics\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in algebraic topology",
+    "output": "{\"search_query\": \"all:\\\"algebraic topology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics related to particle collisions at the LHC",
+    "output": "{\"search_query\": \"cat:hep-ex AND ti:\\\"particle collisions at the LHC\\\"\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on algebraic topology",
+    "output": "{\"search_query\": \"all:\\\"algebraic topology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning in medical image segmentation published since 2023",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on topological data analysis in mathematics since 2023",
+    "output": "{\"search_query\": \"cat:math.MG AND ti:*topological data analysis* AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1803.06059 and 2004.05632 in Quantitative Biology?",
+    "output": "{\"id_list\": \"1803.06059,2004.05632\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:robotics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning and reinforcement learning interactions published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"reinforcement learning\\\" AND submittedDate:[202607220000+TO+202707220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning algorithms for robotics applications published in the last year",
+    "output": "{\"search_query\": \"cat:cs.RO AND ti:*reinforcement learning* AND au:*algorithm*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent findings discussed in papers arXiv:2305.14278 and arXiv:2306.07891?",
+    "output": "{\"id_list\": \"2305.14278,2306.07891\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning algorithms published in the last year",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in papers 2305.12345 and 2306.78901 in the Mathematics section?",
+    "output": "{\"id_list\": \"2305.12345,2306.78901\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:physics.chem-ph AND cat:nlin.CD AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers",
+    "output": "{\"search_query\": \"cat:einstein@berkeley.edu AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on black hole mergers from the last year",
+    "output": "{\"search_query\": \"cat:einstein@gravity AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published in the last year",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202310240000+TO+202410240000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on reinforcement learning techniques used in robotics applications published in the last year",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:\\\"robotics\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"(all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection techniques in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:computer vision AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in NLP",
+    "output": "{\"search_query\": \"(cat:cs.LG AND cat:cs.CL AND all:\\\"transformer architecture\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on black holes since 2023",
+    "output": "{\"search_query\": \"cat:astro-ph.GA AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08732?",
+    "output": "{\"id_list\": \"2305.14567,2306.08732\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning for medical image segmentation published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202607220000+TO+202707220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemical reactions using density functional theory",
+    "output": "{\"search_query\": \"(cat:quantum Physics AND ti:density functional theory) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1806.05377 and 2305.14333, specifically focusing on their abstracts and main contributions?",
+    "output": "{\"id_list\": \"1806.05377,2305.14333\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Provide an analysis of the findings presented in arXiv:2305.14278 and arXiv:2306.15932, focusing on their contributions to natural language processing.",
+    "output": "{\"id_list\": \"2305.14278,2306.15932\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in deep learning architectures",
+    "output": "{\"search_query\": \"all:\\\"deep learning architecture\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1806.05374 and 2305.14152, particularly focusing on their methodologies and main findings?",
+    "output": "{\"id_list\": \"1806.05374,2305.14152\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"(cat:cs.CV AND ti:*object detection* AND ti:*deep learning*) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black hole mergers",
+    "output": "{\"search_query\": \"cat:e-ph AND all:\\\"black hole merger\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND all:\\\"quantitative biology\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in NLP",
+    "output": "{\"search_query\": \"all:\\\"transformer architecture\\\" AND all:NLP AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1802.04976 and 2305.14632 in the Mathematics section?",
+    "output": "{\"id_list\": \"1802.04976,2305.14632\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1806.07578 and 2305.14195, particularly focusing on their contributions to natural language processing?",
+    "output": "{\"id_list\": \"1806.07578,2305.14195\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex OR cat:astro-ph.CO AND all:\\\"dark matter\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on RNA editing techniques in Quantitative Biology",
+    "output": "{\"search_query\": \"all:\\\"RNA editing\\\" AND cat:q-bio\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in NLP",
+    "output": "{\"search_query\": \"all:\\\"transformer architectures\\\" AND all:NLP AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics related to particle collisions",
+    "output": "{\"search_query\": \"(cat:hep-ex AND (ti:\\\"particle collision\\\" OR abs:\\\"particle collision\\\")) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:physics.chem-ph AND cat:nlin.CD AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic geometry published in the last year",
+    "output": "{\"search_query\": \"cat:math.AG AND submittedDate:[202307190000+TO+202407190000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates and discussions on the papers with IDs 1802.04976 and 2305.14632?",
+    "output": "{\"id_list\": \"1802.04976,2305.14632\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:\\\"robotics\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_dynamics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular simulations published since 2023",
+    "output": "{\"search_query\": \"cat:quant-ph OR cat:physics.chem-ph AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing models",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle detectors",
+    "output": "{\"search_query\": \"cat:physics_detector AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:quantum化学 -cat:量子场论 AND ti:molecular dynamics simulations\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics",
+    "output": "{\"search_query\": \"cat:physics.chem-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection techniques in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"(cat:cs.CV AND ti:*object detection* AND ti:*deep learning*) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics related to particle accelerators",
+    "output": "{\"search_query\": \"(cat:physics.acc-ph AND all:\\\"high energy physics\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in generative adversarial networks",
+    "output": "{\"search_query\": \"all:\\\"generative adversarial networks\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex AND ti:*dark matter* AND ti:*detection*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08732?",
+    "output": "{\"id_list\": \"2305.14567,2306.08732\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent studies on black holes",
+    "output": "{\"search_query\": \"all:\\\"black holes\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing techniques\\\" AND cat;q-bio AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in deep learning architectures",
+    "output": "{\"search_query\": \"all:\\\"deep learning architectures\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques published since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14278 and 2306.03999 in Quantitative Biology?",
+    "output": "{\"id_list\": \"2305.14278,2306.03999\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest research findings from the arXiv papers id:2305.14623 and id:2306.10789 in the field of Computer Vision?",
+    "output": "{\"id_list\": \"2305.14623,2306.10789\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on transformers and attention mechanisms in natural language processing",
+    "output": "{\"search_query\": \"ti:(transformers OR 'attention mechanism') AND cat:cs.CL\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gravitational waves since 2023",
+    "output": "{\"search_query\": \"cat:e-ph AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR technology in gene editing",
+    "output": "{\"search_query\": \"all:\\\"CRISPR technology AND gene editing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on algebraic topology",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202607220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14217 and arXiv:2306.08905?",
+    "output": "{\"id_list\": \"2305.14217,2306.08905\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1802.05364 and 2305.14312, particularly focusing on their contributions to natural language processing?",
+    "output": "{\"id_list\": \"1802.05364,2305.14312\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"(all:\\\"CRISPR gene editing\\\" AND cat:q-bio) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection techniques in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex OR cat:astro-ph.IM AND all:\\\"dark matter\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:quantum-chem AND ti:molecular dynamics simulations AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide insights on the papers arXiv:2305.14217 and arXiv:2306.05034 in the field of computer vision?",
+    "output": "{\"id_list\": \"2305.14217,2306.05034\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on algebraic topology",
+    "output": "{\"search_query\": \"all:\\\"algebraic topology\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter detection techniques published in the last year",
+    "output": "{\"search_query\": \"all:\\\"dark matter detection\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum chemistry with focus on molecular dynamics since 2023",
+    "output": "{\"search_query\": \"cat:quantum化学 AND ti:molecular dynamics AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent developments in high energy physics particle detectors",
+    "output": "{\"search_query\": \"cat:physics.detector AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ph AND ti:*dark matter*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on deep learning for medical image segmentation",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on deep learning for medical image segmentation",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14567 and arXiv:2306.08921?",
+    "output": "{\"id_list\": \"2305.14567,2306.08921\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1805.09632 and 2307.14843 in the field of Quantitative Biology?",
+    "output": "{\"id_list\": \"1805.09632,2307.14843\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in natural language processing",
+    "output": "{\"search_query\": \"cat:cs.LG OR cat:cs.CL AND ti:*transformer* AND ti:*natural language processing* AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on transformer architectures in NLP",
+    "output": "{\"search_query\": \"all:\\\"transformer architectures\\\" AND cat:nlin AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_dynamics_simulations AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing in quantitative biology since 2023",
+    "output": "{\"search_query\": \"cat:q-bio AND all:\\\"CRISPR gene editing\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"(cat:quantum化学 OR cat:量子化学 AND ti:molecular dynamics simulations) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide an overview of the findings in arXiv:2305.14567 and arXiv:2303.12345 regarding molecular dynamics simulations?",
+    "output": "{\"id_list\": \"2305.14567,2303.12345\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent advancements discussed in arXiv paper 2305.10845 and arXiv paper 2306.07792?",
+    "output": "{\"id_list\": \"2305.10845,2306.07792\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers in number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gravitational waves since last year",
+    "output": "{\"search_query\": \"cat:gr-qc AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent developments discussed in arXiv:2305.14278 and arXiv:2306.07845?",
+    "output": "{\"id_list\": \"2305.14278,2306.07845\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"(all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the recent advancements discussed in arXiv paper 2305.10768 and arXiv paper 2306.04342?",
+    "output": "{\"id_list\": \"2305.10768,2306.04342\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing techniques in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing in plants published since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing in plants\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex OR cat:astro-ph.CO AND ti:*dark matter* AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular simulations published in the last year",
+    "output": "{\"search_query\": \"cat:quant-ph OR cat:physics/quant-ph AND ti:molecular simulations AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection using deep learning in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND all:\\\"deep learning\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gravitational waves detection techniques",
+    "output": "{\"search_query\": \"cat:einstein@gr.cornell.edu AND ti:*gravitational*waves*detection*techniques*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide insights on the recent developments discussed in papers 2305.14623 and 2306.07589?",
+    "output": "{\"id_list\": \"2305.14623,2306.07589\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gravitational waves from last year",
+    "output": "{\"search_query\": \"cat:e-ph AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10, \"sortBy\": \"relevance\", \"sortOrder\": \"descending\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on reinforcement learning algorithms in robotics",
+    "output": "{\"search_query\": \"all:\\\"reinforcement learning\\\" AND all:robotics AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on number theory",
+    "output": "{\"search_query\": \"cat:math.NT AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14638 and 2212.10969, particularly focusing on their contributions to transformer architectures?",
+    "output": "{\"id_list\": \"2305.14638,2212.10969\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14632 and 2212.10804 in the field of Computer Vision?",
+    "output": "{\"id_list\": \"2305.14632,2212.10804\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on black holes",
+    "output": "{\"search_query\": \"all:\\\"black holes\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic topology published in the last year",
+    "output": "{\"search_query\": \"cat:math.AT AND submittedDate:[202310240000+TO+202410240000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in deep learning architectures",
+    "output": "{\"search_query\": \"all:\\\"deep learning architecture\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1906.08558 and 2305.14127, specifically focusing on their contributions to object detection techniques?",
+    "output": "{\"id_list\": \"1906.08558,2305.14127\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on algebraic geometry published in the last year",
+    "output": "{\"search_query\": \"cat:e-print.math.AG AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on CRISPR gene editing in quantitative biology since 2023",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"cat:hep-ex OR cat:astro-ph.CO AND ti:*dark matter* AND ti:*detection*\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gene editing techniques in plants",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND all:plants AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning for medical image segmentation published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202607220000+TO+202707220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on dark matter detection methods in high energy physics",
+    "output": "{\"search_query\": \"(cat:hep-ex OR cat:astro-ph.CO AND all:\\\"dark matter detection\\\") AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular dynamics simulations",
+    "output": "{\"search_query\": \"(cat:quantum-chemistry AND ti:molecular dynamics simulations) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gravitational waves",
+    "output": "{\"search_query\": \"cat:gravo AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on quantum computing and molecular simulations from the last year",
+    "output": "{\"search_query\": \"cat:quantum AND cat:molecular-simulation AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"(all:\\\"gene editing\\\" AND cat:eagle.q-bio) AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide me with the latest updates on the papers arXiv:2305.14628 and arXiv:2306.15973, particularly focusing on their contributions to natural language processing?",
+    "output": "{\"id_list\": \"2305.14628,2306.15973\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent advancements in natural language processing techniques",
+    "output": "{\"search_query\": \"all:\\\"natural language processing\\\" AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques published since 2023",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1906.05871 and 2305.14157?",
+    "output": "{\"id_list\": \"1906.05871,2305.14157\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14296 and 2307.04021 in Astrophysics?",
+    "output": "{\"id_list\": \"2305.14296,2307.04021\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 2305.14635 and 2309.12345 in the field of Computer Vision?",
+    "output": "{\"id_list\": \"2305.14635,2309.12345\"}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on deep learning for medical image segmentation published in the last year",
+    "output": "{\"search_query\": \"all:\\\"deep learning\\\" AND all:\\\"medical image segmentation\\\" AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on object detection techniques in computer vision",
+    "output": "{\"search_query\": \"all:\\\"object detection\\\" AND cat:cs.CV AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on black hole mergers published in the last year",
+    "output": "{\"search_query\": \"cat:eprints AND ti:*black hole merger* AND submittedDate:[202307220000+TO+202407220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on CRISPR gene editing in plants",
+    "output": "{\"search_query\": \"all:\\\"CRISPR gene editing\\\" AND cat:q-bio.GN AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on dark matter since 2023",
+    "output": "{\"search_query\": \"cat:astro-ph.CO AND submittedDate:[202301010000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "papers on gene editing techniques in quantitative biology",
+    "output": "{\"search_query\": \"all:\\\"gene editing\\\" AND cat:q-bio\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "Can you provide information on the papers with IDs 1802.05364 and 2006.16977, particularly focusing on their methodologies and findings?",
+    "output": "{\"id_list\": \"1802.05364,2006.16977\", \"start\": 0, \"max_results\": 10}"
+  },
+  {
+    "instruction": "Extract arXiv API search parameters from the user query. Output valid JSON only.",
+    "input": "recent papers on quantum chemistry of molecular reactions",
+    "output": "{\"search_query\": \"cat:quantum化学 OR cat:molecular_reactions AND submittedDate:[202507220000+TO+202607220000]\", \"start\": 0, \"max_results\": 10}"
+  }
+]
