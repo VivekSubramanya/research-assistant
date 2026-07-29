@@ -1,0 +1,12 @@
+streamlit
+pandas
+pyarrow
+requests
+feedparser
+numpy
+faiss-cpu
+sentence-transformers
+pymupdf
+pypdf
+beautifulsoup4
+nltk
