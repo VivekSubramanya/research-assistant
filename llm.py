@@ -499,25 +499,8 @@ def _looks_like_context_overflow(raw_response):
     return "exceeds the available context size" in text or "request (" in text and "context size" in text
 
 
-def _requested_top_n(query_text):
-    query = str(query_text or "")
-    match = re.search(r"\btop\s+(\d+)\s+(?:papers?|articles?|studies?)\b", query, flags=re.IGNORECASE)
-    if not match:
-        return None
-    try:
-        return int(match.group(1))
-    except (TypeError, ValueError):
-        return None
-
-
-def _is_arxiv_fallback_chunk(chunk):
-    text = str(chunk.get("text") or chunk.get("chunk_text") or "").strip()
-    if not text:
-        return False
-    return text.startswith("Title:") and "\nSummary:" in text
-
-
 def _prompt_max_chunks(intent, query_text, retrieved_chunks, options=None):
+    """Choose a context count without discarding requested fallback papers."""
     opts = options or {}
     try:
         configured = int(opts.get("max_context_chunks", 2))
@@ -529,49 +512,57 @@ def _prompt_max_chunks(intent, query_text, retrieved_chunks, options=None):
     if not items or intent == "paper_level_query":
         return max_chunks
 
-    requested_top_n = _requested_top_n(query_text)
-    if requested_top_n:
+    # Respect explicit requests such as "top 5 papers", but cap unusually large
+    # requests so prompt construction cannot consume the whole context window.
+    top_n_match = re.search(
+        r"\btop\s+(\d+)\s+(?:papers?|articles?|studies?)\b",
+        str(query_text or ""),
+        flags=re.IGNORECASE,
+    )
+    if top_n_match:
+        requested_top_n = int(top_n_match.group(1))
         max_chunks = max(max_chunks, min(max(requested_top_n, 3), 10))
 
     # Fallback results are already pre-ranked API entries; keep all of them.
-    if items and all(_is_arxiv_fallback_chunk(chunk) for chunk in items):
+    fallback_texts = [
+        str(chunk.get("text") or chunk.get("chunk_text") or "").strip()
+        for chunk in items
+    ]
+    if all(text.startswith("Title:") and "\nSummary:" in text for text in fallback_texts):
         max_chunks = max(max_chunks, len(items))
 
     return max_chunks
 
 
-def _select_context_chunks(intent, chunks, max_chunks):
-    items = list(chunks or [])
-    if not items:
-        return []
-
-    if intent != "paper_level_query":
-        return items[:max_chunks]
-
-    target = max(max_chunks, 8)
-    scored = sorted(items, key=_paper_chunk_priority, reverse=True)
-    return scored[:target]
-
-
 def build_prompt(intent, query_text, chunks, max_chunks=2, max_context_chars=6000):
-    selected_chunks = _select_context_chunks(intent, chunks, max_chunks)
+    """Build an intent-aware prompt from retrieved arXiv context."""
+    available_chunks = list(chunks or [])
+    selected_chunks = available_chunks[:max_chunks]
 
     if intent == "paper_level_query":
+        # Paper-level requests use at least eight chunks initially. The branches
+        # below then specialize ranking and character budgets for precise,
+        # detailed, and general questions about a paper.
+        selected_chunks = sorted(
+            available_chunks,
+            key=_paper_chunk_priority,
+            reverse=True,
+        )[:max(max_chunks, 8)]
         is_precise = _is_precise_paper_query(query_text)
         is_detailed = _is_detailed_paper_query(query_text)
         paper_budget = _paper_context_char_budget()
         if is_precise:
             selected_chunks = sorted(
-                list(chunks or []),
+                available_chunks,
                 key=lambda chunk: _paper_chunk_relevance_score(chunk, query_text),
                 reverse=True,
             )[:8]
             max_context_chars = max(max_context_chars, min(10000, paper_budget))
         elif is_detailed:
-            selected_chunks = sorted(list(chunks or []), key=_paper_chunk_priority, reverse=True)
+            selected_chunks = sorted(available_chunks, key=_paper_chunk_priority, reverse=True)
             max_context_chars = max(max_context_chars, paper_budget)
         else:
-            selected_chunks = sorted(list(chunks or []), key=_paper_chunk_priority, reverse=True)[:20]
+            selected_chunks = sorted(available_chunks, key=_paper_chunk_priority, reverse=True)[:20]
             max_context_chars = max(max_context_chars, min(14000, paper_budget))
 
     context_parts = []

@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch
 
 import requests
+import chunk_and_embed
 import data_ingestion
 
 from APIs import arxiv_api
@@ -79,6 +80,34 @@ class IngestionTests(unittest.TestCase):
                 self.assertTrue(path.endswith("1234.pdf"))
             finally:
                 data_ingestion.PDF_DIR = old_pdf_dir
+
+
+class PdfExtractionTests(unittest.TestCase):
+    def test_extract_text_from_pdf_uses_pymupdf_and_closes_document(self):
+        page = unittest.mock.MagicMock()
+        page.get_text.return_value = [(0, 0, 0, 0, " Primary paragraph ")]
+        document = unittest.mock.MagicMock()
+        document.__iter__.return_value = iter([page])
+        pymupdf = unittest.mock.MagicMock()
+        pymupdf.open.return_value = document
+
+        with patch.object(chunk_and_embed, "fitz", pymupdf):
+            paragraphs = chunk_and_embed.extract_text_from_pdf("paper.pdf")
+
+        self.assertEqual(paragraphs, ["Primary paragraph"])
+        document.close.assert_called_once()
+
+    def test_extract_text_from_pdf_falls_back_to_pypdf(self):
+        page = unittest.mock.MagicMock()
+        page.extract_text.return_value = "First line\nSecond line"
+        reader = unittest.mock.MagicMock()
+        reader.return_value.pages = [page]
+
+        with patch.object(chunk_and_embed, "fitz", None), \
+             patch.object(chunk_and_embed, "PdfReader", reader):
+            paragraphs = chunk_and_embed.extract_text_from_pdf("paper.pdf")
+
+        self.assertEqual(paragraphs, ["First line", "Second line"])
 
 
 class RetrievalTests(unittest.TestCase):

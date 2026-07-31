@@ -57,43 +57,39 @@ def get_faiss_index(force_reload=False):
     return faiss_index
 
 # --- Step 1: Extract text ---
-def _extract_text_pymupdf(file_path):
-    if fitz is None:
-        raise ImportError("PyMuPDF (pymupdf) is required for PDF extraction")
-    doc = fitz.open(file_path)
-    paragraphs = []
-    for page in doc:
-        blocks = page.get_text("blocks")
-        for block in blocks:
-            text = block[4].strip()
-            if text:
-                paragraphs.append(text)
-    doc.close()
-    return paragraphs
-
-
-def _extract_text_pypdf(file_path):
-    if PdfReader is None:
-        raise ImportError("pypdf is required for fallback PDF extraction")
-    reader = PdfReader(file_path)
-    paragraphs = []
-    for page in reader.pages:
-        text = page.extract_text()
-        if text:
-            paragraphs.extend(text.splitlines())
-    return paragraphs
-
-
 def extract_text_from_pdf(file_path):
-    """Extract text from a PDF using PyMuPDF, falling back to pypdf."""
+    """Extract PDF paragraphs with PyMuPDF, then fall back to pypdf."""
     try:
-        paragraphs = _extract_text_pymupdf(file_path)
+        if fitz is None:
+            raise ImportError("PyMuPDF (pymupdf) is required for PDF extraction")
+
+        document = fitz.open(file_path)
+        try:
+            paragraphs = []
+            for page in document:
+                for block in page.get_text("blocks"):
+                    text = block[4].strip()
+                    if text:
+                        paragraphs.append(text)
+        finally:
+            document.close()
+
         if paragraphs:
             return paragraphs
     except Exception as exc:
         print(f"PyMuPDF extraction failed ({exc}); falling back to pypdf extraction.")
 
-    return _extract_text_pypdf(file_path)
+    # pypdf is intentionally kept in this method because it is the continuation
+    # of the same extraction operation, not a separately callable strategy.
+    if PdfReader is None:
+        raise ImportError("pypdf is required for fallback PDF extraction")
+
+    paragraphs = []
+    for page in PdfReader(file_path).pages:
+        text = page.extract_text()
+        if text:
+            paragraphs.extend(text.splitlines())
+    return paragraphs
 
 # --- Step 2: Semantic chunking ---
 def chunk_paragraphs(paragraphs, max_tokens=1000, min_tokens=100, overlap_sentences=2):

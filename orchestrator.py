@@ -22,18 +22,23 @@ if not LOGGER.handlers:
 
 
 def build_llm_request(query, intent, retrieved_chunks, options=None):
+    """Translate retrieval records into the stable payload expected by the LLM."""
     normalized_chunks = []
     for chunk in retrieved_chunks or []:
         if not chunk:
             continue
+
+        # Local retrieval uses ``chunk_text`` while some callers already use the
+        # LLM-facing ``text`` key. Normalize that difference at this boundary.
         text = chunk.get("chunk_text") if "chunk_text" in chunk else chunk.get("text")
-        arxiv_id = chunk.get("arxiv_id")
-        normalized_chunks.append({
-            "chunk_id": chunk.get("chunk_id"),
-            "arxiv_id": arxiv_id,
-            "text": text,
-            "score": chunk.get("score"),
-        })
+        normalized_chunks.append(
+            {
+                "chunk_id": chunk.get("chunk_id"),
+                "arxiv_id": chunk.get("arxiv_id"),
+                "text": text,
+                "score": chunk.get("score"),
+            }
+        )
 
     return {
         "query": query,
@@ -63,17 +68,8 @@ def _coerce_arxiv_only_response(response, fallback_message=ARXIV_ONLY_ERROR):
     }
 
 
-def _build_arxiv_error_response(query_text, intent, message):
-    return {
-        "query": query_text,
-        "intent": intent,
-        "messages": [{"type": "text", "content": message}],
-        "sources": [],
-        "meta": {"degraded": True, "source": "arxiv_fallback"},
-    }
-
-
 def _build_arxiv_fallback_results(query_text, top_k=5):
+    """Retrieve and normalize live arXiv entries when local retrieval is empty."""
     LOGGER.info("stage=arxiv_fallback input=%s", {"query": query_text, "top_k": top_k})
     params = extract_arxiv_search_params(query_text, max_results=top_k)
     try:
@@ -109,13 +105,22 @@ def _build_arxiv_fallback_results(query_text, top_k=5):
 
 
 def _answer_with_arxiv_context(query_text, intent, results):
+    """Resolve missing context, call the LLM, and enforce the response contract."""
     LOGGER.info("stage=answer_start input=%s", {"query": query_text, "intent": intent, "chunk_count": len(results or [])})
     fallback_error_message = None
     if not results:
         LOGGER.info("stage=empty_retrieval action=arxiv_fallback")
         fallback = _build_arxiv_fallback_results(query_text)
-        results = fallback.get("results", [])
-        fallback_error_message = fallback.get("error_message")
+
+        # The fallback originally returned a plain list and now returns an
+        # envelope carrying both results and a user-facing API error. Accepting
+        # both forms keeps this boundary compatible with existing integrations.
+        if isinstance(fallback, dict):
+            results = fallback.get("results", [])
+            fallback_error_message = fallback.get("error_message")
+        else:
+            results = fallback or []
+
         LOGGER.info(
             "stage=arxiv_fallback_complete output=%s",
             {"chunk_count": len(results or []), "degraded": bool(fallback_error_message)},
@@ -123,7 +128,13 @@ def _answer_with_arxiv_context(query_text, intent, results):
 
     if not results:
         if fallback_error_message:
-            response = _build_arxiv_error_response(query_text, intent, fallback_error_message)
+            response = {
+                "query": query_text,
+                "intent": intent,
+                "messages": [{"type": "text", "content": fallback_error_message}],
+                "sources": [],
+                "meta": {"degraded": True, "source": "arxiv_fallback"},
+            }
             LOGGER.info("stage=answer_end output=%s", response)
             return response
         response = _coerce_arxiv_only_response({"messages": []})
@@ -288,23 +299,18 @@ class Orchestrator:
             LOGGER.info("stage=orchestrator_complete output=%s", {"duration_s": round(time.time() - start_time, 3)})
             return response
 
-        if intent == "comparison":
-            LOGGER.info("stage=retrieval input=%s", {"source": "semantic_search", "top_k": 12})
-            results = process_query(searchable_query, top_k=12)
-            response = _answer_with_arxiv_context(query_text, intent, results)
-            LOGGER.info("stage=orchestrator_complete output=%s", {"duration_s": round(time.time() - start_time, 3)})
-            return response
+        # Every remaining intent uses semantic retrieval. Only the context size
+        # changes: comparisons need breadth, while citations favor a tighter set.
+        retrieval_depth_by_intent = {
+            "comparison": 12,
+            "citation_request": 8,
+        }
+        top_k = retrieval_depth_by_intent.get(intent, override_top_k or 10)
+        response_intent = intent if intent in retrieval_depth_by_intent else "default"
 
-        if intent == "citation_request":
-            LOGGER.info("stage=retrieval input=%s", {"source": "semantic_search", "top_k": 8})
-            results = process_query(searchable_query, top_k=8)
-            response = _answer_with_arxiv_context(query_text, intent, results)
-            LOGGER.info("stage=orchestrator_complete output=%s", {"duration_s": round(time.time() - start_time, 3)})
-            return response
-
-        LOGGER.info("stage=retrieval input=%s", {"source": "semantic_search", "top_k": override_top_k or 10})
-        results = process_query(searchable_query, top_k=override_top_k or 10)
-        response = _answer_with_arxiv_context(query_text, "default", results)
+        LOGGER.info("stage=retrieval input=%s", {"source": "semantic_search", "top_k": top_k})
+        results = process_query(searchable_query, top_k=top_k)
+        response = _answer_with_arxiv_context(query_text, response_intent, results)
         LOGGER.info("stage=orchestrator_complete output=%s", {"duration_s": round(time.time() - start_time, 3)})
         return response
 

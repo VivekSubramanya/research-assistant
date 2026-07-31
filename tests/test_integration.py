@@ -6,7 +6,6 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 import faiss
-import numpy as np
 
 import chunk_and_embed
 import data_ingestion
@@ -55,15 +54,6 @@ class ResearchAssistantIntegrationTests(unittest.TestCase):
                             embeddings.append([0.4, 0.5, 0.6])
                     return embeddings
 
-            def fake_search(query_vec, k):
-                index = faiss.IndexFlatL2(3)
-                index.add(np.array([[0.1, 0.2, 0.3]], dtype="float32"))
-                return index.search(query_vec, k)
-
-            class FakeLLMResponse:
-                def __init__(self):
-                    self.stdout = b'{"messages": [{"type": "text", "content": "The paper introduces a new method."}]}'
-
             # Patch module-level paths and external dependencies
             with patch.object(data_ingestion, "DB_PATH", db_path), \
                  patch.object(chunk_and_embed, "DB_PATH", db_path), \
@@ -71,17 +61,15 @@ class ResearchAssistantIntegrationTests(unittest.TestCase):
                  patch.object(data_ingestion, "PDF_DIR", pdf_dir), \
                  patch.object(data_ingestion.arxiv, "Search", FakeSearch), \
                  patch.object(data_ingestion.requests, "get", return_value=FakeResponse(b"pdfbytes")), \
-                 patch.object(chunk_and_embed.requests, "post", return_value=FakeResponse("<TEI><text><p>This paper introduces a new method.</p></text></TEI>")), \
+                 patch.object(chunk_and_embed, "extract_text_from_pdf", return_value=["This paper introduces a new method."]), \
                  patch.object(chunk_and_embed, "get_embed_model", return_value=FakeEncoder()), \
                  patch.object(query_processing, "get_embed_model", return_value=FakeEncoder()), \
                  patch.object(chunk_and_embed, "faiss_index", faiss.IndexFlatL2(3)), \
                  patch.object(query_processing, "faiss_index", faiss.IndexFlatL2(3)), \
                  patch.object(query_processing, "run_faiss_search", side_effect=lambda embedding, top_k=10: [{"chunk_id": 1, "chunk_text": "This paper introduces a new method.", "arxiv_id": "1234", "faiss_pos": 0}]), \
-                 patch.object(chunk_and_embed, "save_faiss_index", return_value=None), \
-                 patch("llm.subprocess.run", return_value=FakeLLMResponse()):
+                 patch.object(chunk_and_embed, "save_faiss_index", return_value=None):
                 data_ingestion.init_db()
                 data_ingestion.ingest_paper("1234")
-                chunk_and_embed.init_db = data_ingestion.init_db
                 chunk_and_embed.process_document("1234", os.path.join(pdf_dir, "1234.pdf"))
 
                 results = query_processing.process_query("What is the main idea?", top_k=5)
