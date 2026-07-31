@@ -403,6 +403,46 @@ python -m pytest tests -q
 
 The suite covers unit behavior, response contracts, edge cases, and the ingestion-to-answer integration path.
 
+## Planned Improvements
+
+The current application is functional end to end, but several improvements would make it faster, more expressive, and easier to evaluate as the paper collection grows.
+
+### 1. Layered caching and persistent runtime services
+
+Caching should be introduced at the expensive boundaries rather than applied indiscriminately to final answers:
+
+- **Keep the FAISS index resident in memory.** The index is currently reloaded from disk for each semantic search. A long-lived index with explicit invalidation after ingestion would reduce repeated disk I/O while ensuring newly added chunks become searchable.
+- **Share one embedding model instance.** Ingestion and query processing currently manage their own lazy-loaded embedder. A shared embedding service would avoid duplicate model initialization and unnecessary memory use.
+- **Cache stable retrieval inputs.** Normalized query embeddings and arXiv API responses can be stored with bounded sizes and time-to-live policies. arXiv result caches should expire so recent-paper queries do not become stale.
+- **Keep model inference warm.** Each llama.cpp CLI invocation starts a new process and loads the model again. Moving to a persistent llama.cpp server or managed worker would remove much of that startup cost and enable supported prompt or prefix caching.
+- **Treat answer caching conservatively.** A generated answer should only be reused when its key includes the normalized query, intent, model version, prompt version, and retrieved chunk identifiers or content hashes. Any change to the model, prompt, or evidence should invalidate the entry.
+
+This staged approach prioritizes reusable computation while preserving the project's grounding guarantees. Cache hit rates, invalidations, and saved latency should be logged so that each layer can be measured rather than assumed to help.
+
+### 2. Wider intents and more complete responses
+
+The existing intent routes and response formats are fully functional, but their range and depth remain deliberately narrow. Later iterations can add intents for literature review, methodology extraction, dataset discovery, result synthesis, limitation analysis, and research-gap identification.
+
+Responses can also become significantly more verbose and structured, with clearer evidence summaries, methodology breakdowns, comparison dimensions, and explicit statements of uncertainty. This work is intentionally phased later: expanding the response layer is relatively small once real usage makes the next useful intents and output structures evident.
+
+### 3. Hybrid retrieval and reranking
+
+Dense embeddings are useful for semantic similarity, but exact terminology, paper IDs, dataset names, equations, and uncommon technical phrases can benefit from lexical retrieval. A future retrieval pipeline can combine vector search with keyword or BM25 results, merge the candidate sets, and rerank them before prompt construction.
+
+The objective is not simply to retrieve more chunks. It is to improve evidence coverage while reducing irrelevant context, especially for multi-paper comparisons and narrowly factual questions.
+
+### 4. Grounded conversational follow-ups
+
+The interface retains a visible transcript, but the reasoning layer currently treats every prompt independently. A future conversation layer can resolve references such as "the second paper" or "compare it with the previous method" by carrying forward selected paper IDs, citations, and retrieval state.
+
+Conversation memory should remain explicit and source-bound. Users should be able to see which earlier papers are still in scope, and starting a new topic should clear that context rather than silently mixing unrelated evidence.
+
+### 5. Evaluation and observability
+
+The test suite verifies contracts and important execution paths, but research quality also needs measurable evaluation. Future work can add benchmark sets for retrieval recall, citation accuracy, factual groundedness, intent classification, comparison completeness, and abstention when evidence is insufficient.
+
+Operational measurements should include end-to-end latency, model startup time, retrieval duration, cache hit rates, context truncation, fallback frequency, and failure reasons. These metrics would make performance work evidence-based and help distinguish retrieval failures from generation failures.
+
 ## Limitations
 
 - This is a research aid, not a substitute for reading the original paper or verifying a claim before publication.
